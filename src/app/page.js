@@ -2,12 +2,7 @@ import { Chart } from './Chart'
 
 export default async function Page() {
   try {
-    let baseUrl
-    if (!process.env.NEXT_PUBLIC_VERCEL_URL) {
-      baseUrl = 'http://localhost:3000'
-    } else {
-      baseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    }
+    const baseUrl = 'https://moneyflo-takehome.vercel.app'
     const apiUrl = `${baseUrl}/api/`
     const response = await fetch(apiUrl, {
       next: {
@@ -15,7 +10,8 @@ export default async function Page() {
       },
     })
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      console.log(response)
+      throw new Error('Failed to fetch data')
     }
     const { data } = await response.json()
     return (
