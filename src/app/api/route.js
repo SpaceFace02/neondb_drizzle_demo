@@ -18,8 +18,6 @@ async function getData() {
   return result
 }
 
-// Create a GET API.
-
 export async function GET() {
   try {
     const data = await getData()
