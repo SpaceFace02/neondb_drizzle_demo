@@ -2,7 +2,7 @@ import { Chart } from './Chart'
 
 export default async function Page() {
   try {
-    const baseUrl = 'https://moneyflo-takehome.vercel.app'
+    const baseUrl = 'https://neondb-drizzle-demo.vercel.app'
     const apiUrl = `${baseUrl}/api/`
     const response = await fetch(apiUrl, {
       next: {
